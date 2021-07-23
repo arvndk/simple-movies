@@ -1,24 +1,22 @@
-import axios from "";
-
-const initialState = {
+const initState = {
   popularGames: [],
   newGames: [],
   upcomingGames: [],
+  searchedGames: [],
 };
 
-const gamesReducer = (state = initialState, action) => {
+const gamesReducer = (state = initState, action) => {
   switch (action.type) {
     case "FETCH_GAMES":
-      return { ...state };
+      return {
+        ...state,
+        popularGames: action.payload.popularGames,
+        newGames: action.payload.newGames,
+        upcomingGames: action.payload.upcomingGames,
+      };
     default:
       return { ...state };
   }
-};
-
-const fetchGames = () => {
-  return {
-    type: "FETCH_GAMES",
-  };
 };
 
 export default gamesReducer;

@@ -1,8 +1,13 @@
-import { popularGamesURL } from "./api.js";
-console.log(popularGamesURL());
+import React from "react";
+import Home from "./pages/Home";
 
 function App() {
-  return <div className="App">test</div>;
+  return (
+    <div className="App">
+      <h1>Hello Ignite</h1>
+      <Home />
+    </div>
+  );
 }
 
 export default App;
